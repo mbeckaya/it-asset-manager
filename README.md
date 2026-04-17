@@ -12,3 +12,17 @@ A system for managing company IT assets such as laptops, monitors, and other har
 - Basic authentication
 - Search & filter
 - Dashboard (KPIs)
+
+## Installation
+
+Install dependencies
+```bash
+cd backend
+
+npm install
+```
+
+Run database migrations
+```bash
+npx knex migrate:latest
+```

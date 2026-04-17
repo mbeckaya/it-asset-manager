@@ -1,0 +1,6 @@
+node_modules
+
+# For development
+knexfile-dev.ts
+database-dev.sql
+README-DEV.md
