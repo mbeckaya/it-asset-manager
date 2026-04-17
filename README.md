@@ -19,10 +19,14 @@ Install dependencies
 ```bash
 cd backend
 
+cp .env.example .env
+
 npm install
 ```
 
-Run database migrations
+Run database migrations and seeding
 ```bash
 npx knex migrate:latest
+
+npx knex seed:run
 ```

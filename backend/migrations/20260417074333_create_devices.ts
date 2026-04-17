@@ -1,6 +1,5 @@
 import type { Knex } from "knex";
 
-
 export async function up(knex: Knex): Promise<void> {
     await knex.schema.createTable("devices", (table) => {
         table.increments("id").primary();
@@ -29,13 +28,13 @@ export async function up(knex: Knex): Promise<void> {
         table.string("serial_number", 100).notNullable();
         table.smallint("warranty_months");
         table.smallint("lifespan_months");
+        table.decimal("price", 10, 2).notNullable();
         table.timestamps(true, true);
 
         table.index(["purchased_at"], "idx_purchased_at");
         table.index(["model_name"], "idx_model_name");
     });
 }
-
 
 export async function down(knex: Knex): Promise<void> {
     await knex.schema.dropTableIfExists("devices");
