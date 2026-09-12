@@ -35,7 +35,7 @@ Full-stack IT Asset Manager built with **React, TypeScript, FastAPI & PostgreSQL
 ### Web
 
 - [ ] React frontend implementation
-- [ ] Asset CRUD interface
+- [X] Asset CRUD interface
 - [ ] Asset assignment interface
 - [ ] Asset lifecycle status interface
 

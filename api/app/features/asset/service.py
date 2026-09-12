@@ -19,7 +19,7 @@ class AssetService(BaseService):
 
     def get_all(self) -> list[Asset]:
         with Session(engine) as session:
-            return session.exec(select(Asset)).all()
+            return session.exec(select(Asset).order_by("id")).all()
 
     def create(self, asset_new: AssetCreate) -> Asset:
         asset = Asset.model_validate(asset_new)
