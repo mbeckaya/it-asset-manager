@@ -28,7 +28,7 @@ Full-stack IT Asset Manager built with **React, TypeScript, FastAPI & PostgreSQL
 ### API
 
 - [ ] REST API
-- [ ] Asset CRUD operations
+- [X] Asset CRUD operations
 - [ ] Asset assignments
 - [ ] Asset lifecycle status
 
@@ -69,3 +69,13 @@ asset-manager/
 ## 🚧 Status
 
 **In Progress**
+
+<!-- ```sh
+python -m venv venv
+
+.\venv\Scripts\Activate.ps1
+
+pip install -r requirements.txt
+
+python -m fastapi dev app/main.py
+``` -->
