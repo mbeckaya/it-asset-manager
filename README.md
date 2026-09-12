@@ -29,7 +29,7 @@ Full-stack IT Asset Manager built with **React, TypeScript, FastAPI & PostgreSQL
 
 - [ ] REST API
 - [X] Asset CRUD operations
-- [ ] Asset assignments
+- [X] Asset assignments
 - [ ] Asset lifecycle status
 
 ### Web

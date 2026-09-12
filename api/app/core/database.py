@@ -4,7 +4,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from sqlmodel import SQLModel, Session, create_engine, select
 
+from app.features.user.model import User, users
 from app.features.asset.model import Asset, assets
+from app.features.asset_assignment.model import AssetAssignment, asset_assignments
 
 load_dotenv()
 
@@ -15,7 +17,9 @@ engine = create_engine(DATABASE_URL)
 def seed_database() -> None:
     with Session(engine) as session:
         seed_data = [
+            (User, users),
             (Asset, assets),
+            (AssetAssignment, asset_assignments),
         ]
 
         for model, data in seed_data:

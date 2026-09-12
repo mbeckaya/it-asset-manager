@@ -4,6 +4,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.core.database import lifespan
 from app.features.asset.router import router as asset_router
+from app.features.asset_assignment.router import router as asset_assignment_router
 
 def error_response(
         status_code: int, 
@@ -42,3 +43,4 @@ async def global_exception_handler(request: Request):
     )
 
 app.include_router(asset_router)
+app.include_router(asset_assignment_router)
