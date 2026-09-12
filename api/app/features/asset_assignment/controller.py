@@ -2,8 +2,10 @@ from fastapi import HTTPException, status
 from sqlalchemy.exc import IntegrityError
 
 from app.features.asset_assignment.service import AssetAssignmentService
+from app.features.asset_status.service import AssetStatusService
 from app.features.asset.service import AssetService
 from app.features.asset_assignment.model import AssetAssignment, AssetAssignmentCreate
+from app.features.asset_status.model import AssetStatusCreate
 from app.core.controller import BaseController
 from app.features.asset.enums import AssetStatusEnum
 
@@ -11,10 +13,12 @@ class AssetAssignmentController(BaseController):
     def __init__(
             self, 
             asset_assignment_service: AssetAssignmentService,
+            asset_status_service: AssetStatusService,
             asset_service: AssetService,
     ):
         super().__init__("Asset Assignment")
         self.__asset_assignment_service = asset_assignment_service
+        self.__asset_status_service = asset_status_service
         self.__asset_service = asset_service
 
     def index(self) -> list[AssetAssignment]:
@@ -43,6 +47,13 @@ class AssetAssignmentController(BaseController):
         except:
             self.err_default()
 
+        self.__asset_status_service.create(
+            AssetStatusCreate(
+                status=AssetStatusEnum.ASSIGNED,
+                asset_id=asset_assignment.asset_id,
+            )
+        ) 
+
         asset.status = AssetStatusEnum.ASSIGNED
         self.__asset_service.update(asset.id, asset)
 
@@ -63,5 +74,12 @@ class AssetAssignmentController(BaseController):
 
         if not asset_assignment:
             self.err_not_found(asset_assignment_id)
+
+        self.__asset_status_service.create(
+            AssetStatusCreate(
+                status=AssetStatusEnum.AVAILABLE,
+                asset_id=asset_assignment.asset_id,
+            )
+        ) 
 
         return asset_assignment

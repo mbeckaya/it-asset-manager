@@ -1,16 +1,21 @@
 from sqlalchemy.exc import IntegrityError
 
 from app.features.asset.service import AssetService
+from app.features.asset_status.service import AssetStatusService
 from app.core.controller import BaseController
 from app.features.asset.model import Asset, AssetCreate, AssetUpdate
+from app.features.asset_status.model import AssetStatusCreate
+from app.features.asset.enums import AssetStatusEnum
 
 class AssetController(BaseController):
     def __init__(
             self, 
             asset_service: AssetService,
+            asset_status_service: AssetStatusService,
     ):
         super().__init__("Asset")
         self.__asset_service = asset_service
+        self.__asset_status_service = asset_status_service
 
     def index(self) -> list[Asset]:
         return self.__asset_service.get_all()
@@ -31,6 +36,13 @@ class AssetController(BaseController):
         except:
             self.err_default()
 
+        self.__asset_status_service.create(
+            AssetStatusCreate(
+                status=AssetStatusEnum.AVAILABLE,
+                asset_id=asset_new.id,
+            )
+        ) 
+
         return asset_new
 
     def update(
@@ -49,6 +61,13 @@ class AssetController(BaseController):
         if not asset:
             self.err_not_found(asset_id)
 
+        self.__asset_status_service.create(
+            AssetStatusCreate(
+                status=asset.status,
+                asset_id=asset.id,
+            )
+        ) 
+
         return asset
 
     def destroy(self, asset_id: int) -> None:
@@ -59,3 +78,10 @@ class AssetController(BaseController):
 
         if not is_deleted:
             self.err_not_found(asset_id)
+
+        self.__asset_status_service.create(
+            AssetStatusCreate(
+                status=AssetStatusEnum.RETIRED,
+                asset_id=asset_id,
+            )
+        ) 
