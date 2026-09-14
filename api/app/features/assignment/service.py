@@ -2,7 +2,7 @@ from sqlmodel import Session, select
 
 from app.core.database import engine
 from app.core.service import BaseService
-from app.features.asset_assignment.model import AssetAssignment, AssetAssignmentCreate
+from app.features.assignment.model import AssetAssignment, AssetAssignmentCreate
 
 class AssetAssignmentService(BaseService):
     def get_all(self) -> list[AssetAssignment]:

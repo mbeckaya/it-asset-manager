@@ -1,11 +1,11 @@
 from fastapi import HTTPException, status
 from sqlalchemy.exc import IntegrityError
 
-from app.features.asset_assignment.service import AssetAssignmentService
-from app.features.asset_status.service import AssetStatusService
+from app.features.assignment.service import AssetAssignmentService
+from app.features.status.service import AssetStatusService
 from app.features.asset.service import AssetService
-from app.features.asset_assignment.model import AssetAssignment, AssetAssignmentCreate
-from app.features.asset_status.model import AssetStatusCreate
+from app.features.assignment.model import AssetAssignment, AssetAssignmentCreate
+from app.features.status.model import AssetStatusCreate
 from app.core.controller import BaseController
 from app.features.asset.enums import AssetStatusEnum
 

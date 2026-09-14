@@ -1,7 +1,7 @@
 import { useParams } from 'react-router';
 
-import PageHeadline from '../components/PageHeadline';
-import AssetDetail from '../components/asset/AssetDetail';
+import PageHeadline from '../../components/PageHeadline';
+import AssetDetail from '../../components/asset/AssetDetail';
 
 export default function AssetDetailPage() {
     const { id } = useParams();

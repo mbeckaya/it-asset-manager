@@ -1,10 +1,10 @@
 from sqlalchemy.exc import IntegrityError
 
 from app.features.asset.service import AssetService
-from app.features.asset_status.service import AssetStatusService
+from app.features.status.service import AssetStatusService
 from app.core.controller import BaseController
 from app.features.asset.model import Asset, AssetCreate, AssetUpdate
-from app.features.asset_status.model import AssetStatusCreate
+from app.features.status.model import AssetStatusCreate
 from app.features.asset.enums import AssetStatusEnum
 
 class AssetController(BaseController):

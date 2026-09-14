@@ -1,5 +1,5 @@
-import AssetCreate from '../components/asset/AssetCreate';
-import PageHeadline from '../components/PageHeadline';
+import AssetCreate from '../../components/asset/AssetCreate';
+import PageHeadline from '../../components/PageHeadline';
 
 export default function AssetCreatePage() {
     return (

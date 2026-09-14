@@ -2,7 +2,7 @@ from sqlmodel import Session, select
 
 from app.core.database import engine
 from app.core.service import BaseService
-from app.features.asset_status.model import AssetStatus, AssetStatusCreate
+from app.features.status.model import AssetStatus, AssetStatusCreate
 
 class AssetStatusService(BaseService):
     def get_all(self, asset_id: int) -> list[AssetStatus]:

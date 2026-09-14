@@ -1,7 +1,7 @@
 import { useParams } from 'react-router';
 
-import PageHeadline from '../components/PageHeadline';
-import AssetEdit from '../components/asset/AssetEdit';
+import PageHeadline from '../../components/PageHeadline';
+import AssetEdit from '../../components/asset/AssetEdit';
 
 export default function AssetEditPage() {
     const { id } = useParams();

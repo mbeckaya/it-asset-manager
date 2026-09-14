@@ -1,12 +1,12 @@
 from fastapi import APIRouter, status
 
-from app.features.asset_assignment.model import AssetAssignment, AssetAssignmentCreate
+from app.features.assignment.model import AssetAssignment, AssetAssignmentCreate
 from app.features.asset.model import Asset
-from app.features.asset_status.model import AssetStatus
-from app.features.asset_assignment.service import AssetAssignmentService
-from app.features.asset_status.service import AssetStatusService
+from app.features.status.model import AssetStatus
+from app.features.assignment.service import AssetAssignmentService
+from app.features.status.service import AssetStatusService
 from app.features.asset.service import AssetService
-from app.features.asset_assignment.controller import AssetAssignmentController
+from app.features.assignment.controller import AssetAssignmentController
 
 asset_assignment_service = AssetAssignmentService(AssetAssignment)
 asset_status_service = AssetStatusService(AssetStatus)

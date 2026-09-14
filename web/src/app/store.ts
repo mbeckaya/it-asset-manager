@@ -1,13 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { assetsApi } from '../api/assetsApi';
+import { assignmentsApi } from '../api/assignmentsApi';
 
 export const store = configureStore({
     reducer: {
         [assetsApi.reducerPath]: assetsApi.reducer,
+        [assignmentsApi.reducerPath]: assignmentsApi.reducer,
     },
 
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(assetsApi.middleware),
+        getDefaultMiddleware()
+            .concat(assetsApi.middleware)
+            .concat(assignmentsApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

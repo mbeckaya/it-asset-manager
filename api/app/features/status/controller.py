@@ -1,8 +1,8 @@
 from sqlalchemy.exc import IntegrityError
 
 from app.core.controller import BaseController
-from app.features.asset_status.service import AssetStatusService
-from app.features.asset_status.model import AssetStatus, AssetStatusCreate
+from app.features.status.service import AssetStatusService
+from app.features.status.model import AssetStatus, AssetStatusCreate
 
 class AssetStatusController(BaseController):
     def __init__(self, asset_status_service: AssetStatusService):

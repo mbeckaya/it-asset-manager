@@ -1,9 +1,9 @@
 from fastapi import APIRouter, status
 
 from app.features.asset.model import Asset, AssetCreate, AssetUpdate
-from app.features.asset_status.model import AssetStatus
+from app.features.status.model import AssetStatus
 from app.features.asset.service import AssetService
-from app.features.asset_status.service import AssetStatusService
+from app.features.status.service import AssetStatusService
 from app.features.asset.controller import AssetController
 
 asset_service = AssetService(Asset)

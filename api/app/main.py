@@ -4,8 +4,8 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.core.database import lifespan
 from app.features.asset.router import router as asset_router
-from app.features.asset_assignment.router import router as asset_assignment_router
-from app.features.asset_status.router import router as assset_status_router
+from app.features.assignment.router import router as asset_assignment_router
+from app.features.status.router import router as assset_status_router
 
 def error_response(
         status_code: int, 

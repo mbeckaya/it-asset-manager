@@ -6,7 +6,7 @@ from sqlmodel import SQLModel, Session, create_engine, select
 
 from app.features.user.model import User, users
 from app.features.asset.model import Asset, assets
-from app.features.asset_assignment.model import AssetAssignment, asset_assignments
+from app.features.assignment.model import AssetAssignment, asset_assignments
 
 load_dotenv()
 

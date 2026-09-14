@@ -2,32 +2,18 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router';
 import { store } from './app/store';
 
-import AssetListPage from './pages/AssetListPage';
-import AssetDetailPage from './pages/AssetDetailPage';
-import AssetEditPage from './pages/AssetEditPage';
-import AssetCreatePage from './pages/AssetCreatePage';
+import AssetListPage from './pages/asset/AssetListPage';
+import AssetDetailPage from './pages/asset/AssetDetailPage';
+import AssetEditPage from './pages/asset/AssetEditPage';
+import AssetCreatePage from './pages/asset/AssetCreatePage';
+import Navbar from './components/Navbar';
+import AssignmentListPage from './pages/assignment/AssignmentListPage';
 
 export default function App() {
     return (
         <Provider store={store}>
             <BrowserRouter>
-                <header className="navbar bg-base-100 shadow-sm">
-                    <div className="flex-1">
-                        <Link to="/" className="btn btn-ghost text-xl">
-                            IT Asset Manager
-                        </Link>
-                    </div>
-                    <div className="flex-none">
-                        <ul className="menu menu-horizontal px-1">
-                            <li>
-                                <Link to="/">Asset List</Link>
-                            </li>
-                            <li>
-                                <Link to="/assets/new">Add Asset</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </header>
+                <Navbar />
 
                 <Routes>
                     <Route path="/" element={<AssetListPage />} />
@@ -37,6 +23,10 @@ export default function App() {
                         element={<AssetEditPage />}
                     />
                     <Route path="/assets/new" element={<AssetCreatePage />} />
+                    <Route
+                        path="/assignments"
+                        element={<AssignmentListPage />}
+                    />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </BrowserRouter>
