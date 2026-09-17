@@ -13,7 +13,17 @@ export const assignmentsApi = createApi({
             query: () => 'asset-assignments',
             providesTags: ['Assignments'],
         }),
+
+        createAssignments: builder.mutation<Assignment, Partial<Assignment>>({
+            query: (assignments) => ({
+                url: 'asset-assignments',
+                method: 'POST',
+                body: assignments,
+            }),
+            invalidatesTags: ['Assignments'],
+        }),
     }),
 });
 
-export const { useGetAllAssignmentQuery } = assignmentsApi;
+export const { useGetAllAssignmentQuery, useCreateAssignmentsMutation } =
+    assignmentsApi;

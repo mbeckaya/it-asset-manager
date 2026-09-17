@@ -1,5 +1,10 @@
 import { Link } from 'react-router';
-import { EyeIcon, PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
+import {
+    UserPlusIcon,
+    EyeIcon,
+    PencilIcon,
+    TrashIcon,
+} from '@heroicons/react/24/outline';
 
 import {
     useDestroyByIdMutation,
@@ -11,7 +16,13 @@ import ErrorMessage from '../ErrorMessage';
 import AssetStatus from './AssetStatus';
 
 export default function AssetList() {
-    const { data: assets = [], isLoading, error } = useGetAllAssetsQuery();
+    const {
+        data: assets = [],
+        isLoading,
+        error,
+    } = useGetAllAssetsQuery(undefined, {
+        refetchOnMountOrArgChange: true,
+    });
 
     const [destroyById] = useDestroyByIdMutation();
 
@@ -62,6 +73,13 @@ export default function AssetList() {
                                 </AssetStatus>
                             </td>
                             <td className="flex gap-2">
+                                <Link
+                                    to={`/assignments/${asset.id}/new`}
+                                    className={`btn btn-soft btn-primary ${getDisabledClass(asset.status)}`}
+                                >
+                                    <UserPlusIcon className="size-5" />
+                                </Link>
+
                                 <Link
                                     to={`/assets/${asset.id}`}
                                     className="btn btn-soft btn-info"

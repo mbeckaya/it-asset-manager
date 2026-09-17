@@ -27,24 +27,25 @@ Full-stack IT Asset Manager built with **React, TypeScript, FastAPI & PostgreSQL
 
 ### API
 
-- [X] REST API
-- [X] Asset CRUD operations
-- [X] Asset assignments
-- [X] Asset lifecycle status
+- [x] REST API
+- [x] Asset CRUD operations
+- [x] Asset assignments
+- [x] Asset lifecycle status
 
 ### Web
 
 - [ ] React frontend implementation
-- [X] Asset CRUD interface
+- [x] Asset CRUD interface
 - [ ] Asset assignment interface
 - [ ] Asset lifecycle status interface
+- [ ] User feedback and redirect handling for CRUD actions (success/error states)
 
 ### Testing
 
-* [ ] API tests
-* [ ] API validation & error handling tests
-* [ ] React component tests
-* [ ] Basic frontend user flow tests
+- [ ] API tests
+- [ ] API validation & error handling tests
+- [ ] React component tests
+- [ ] Basic frontend user flow tests
 
 ### Importer
 

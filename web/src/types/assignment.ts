@@ -5,3 +5,10 @@ export type Assignment = {
     assigned_at: string;
     notes?: string;
 };
+
+export type AssignmentFormErrors = {
+    asset_id?: string;
+    user_id?: string;
+    assigned_at?: string;
+    notes?: string;
+};

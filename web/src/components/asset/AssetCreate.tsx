@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import { useCreateAssetMutation } from '../../api/assetsApi';
-import { AssetBrandsEnum } from '../../types/assetBrandsEnum';
-import { AssetTypeEnum } from '../../types/assetTypeEnum';
-import { AssetResellerEnum } from '../../types/AssetResellerEnum';
-import { AssetStatusEnum } from '../../types/assetStatusEnum';
+import { AssetBrandsEnum } from '../../types/enums/assetBrandsEnum';
+import { AssetTypeEnum } from '../../types/enums/assetTypeEnum';
+import { AssetResellerEnum } from '../../types/enums/assetResellerEnum';
+import { AssetStatusEnum } from '../../types/enums/assetStatusEnum';
 import { getApiErrorMessage } from '../../api/apiError';
 import type { Asset } from '../../types/asset';
 
