@@ -12,7 +12,12 @@ type Props = {
 };
 
 export default function AssignmentForm({ data, onSubmitSuccess }: Props) {
-    const [formData, setFormData] = useState<Assignment>(data);
+    const [formData, setFormData] = useState<Assignment>(() => ({
+        ...data,
+        assigned_at: data.assigned_at ?? '',
+        returned_at: data.returned_at ?? '',
+        notes: data.notes ?? '',
+    }));
     const [formErrors, setFormErrors] = useState<AssignmentFormErrors>({});
 
     const handleSubmit = async (ev: React.FormEvent<HTMLFormElement>) => {
@@ -27,6 +32,7 @@ export default function AssignmentForm({ data, onSubmitSuccess }: Props) {
                 asset_id: fieldErrors.asset_id?.[0],
                 user_id: fieldErrors.user_id?.[0],
                 assigned_at: fieldErrors.assigned_at?.[0],
+                returned_at: fieldErrors.returned_at?.[0],
                 notes: fieldErrors.notes?.[0],
             });
 
@@ -117,6 +123,29 @@ export default function AssignmentForm({ data, onSubmitSuccess }: Props) {
                     <div className="pt-1">
                         <ErrorMessage>
                             <p>{formErrors.assigned_at}</p>
+                        </ErrorMessage>
+                    </div>
+                )}
+            </div>
+
+            <div className="space-y-2">
+                <label htmlFor="returned_at" className="block">
+                    Returned At:
+                </label>
+
+                <input
+                    id="returned_at"
+                    name="returned_at"
+                    type="date"
+                    className="input"
+                    value={formData?.returned_at}
+                    onChange={handleChange}
+                />
+
+                {formErrors?.returned_at && (
+                    <div className="pt-1">
+                        <ErrorMessage>
+                            <p>{formErrors.returned_at}</p>
                         </ErrorMessage>
                     </div>
                 )}

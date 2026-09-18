@@ -20,6 +20,7 @@ export default function AssignmentCreate({ id }: Props) {
         asset_id: Number(id),
         user_id: -1,
         assigned_at: '',
+        returned_at: '',
         notes: '',
     };
 

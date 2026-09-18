@@ -38,6 +38,7 @@ export default function AssignmentList() {
                         <th>Asset ID</th>
                         <th>User ID</th>
                         <th>Assigned</th>
+                        <th>Returned</th>
                         <th>Notes</th>
                         <th>Actions</th>
                     </tr>
@@ -49,6 +50,7 @@ export default function AssignmentList() {
                             <td>{assignment.asset_id}</td>
                             <td>{assignment.user_id}</td>
                             <td>{assignment.assigned_at}</td>
+                            <td>{assignment.returned_at}</td>
                             <td>{assignment.notes}</td>
                             <td className="flex gap-2">
                                 <Link
