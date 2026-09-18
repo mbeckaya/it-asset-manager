@@ -9,6 +9,10 @@ class AssetAssignmentService(BaseService):
         with Session(engine) as session:
             return session.exec(select(AssetAssignment)).all()
 
+    def get_by_id(self, asset_assignment_id: int) -> AssetAssignment | None:
+        with Session(engine) as session:
+            return session.get(AssetAssignment, asset_assignment_id)
+
     def create(
             self, 
             asset_assignment_new: AssetAssignmentCreate

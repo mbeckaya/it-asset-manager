@@ -24,6 +24,14 @@ class AssetAssignmentController(BaseController):
     def index(self) -> list[AssetAssignment]:
         return self.__asset_assignment_service.get_all()
 
+    def show(self, asset_assignment_id: int) -> AssetAssignment:
+        asset_assignment = self.__asset_assignment_service.get_by_id(asset_assignment_id)
+        
+        if not asset_assignment: 
+            self.err_not_found(asset_assignment_id)
+
+        return asset_assignment
+
     def store(self, asset_assignment_new: AssetAssignmentCreate) -> AssetAssignment:
         asset = self.__asset_service.get_by_id(
             asset_assignment_new.asset_id

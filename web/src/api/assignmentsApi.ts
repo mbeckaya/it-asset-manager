@@ -14,6 +14,22 @@ export const assignmentsApi = createApi({
             providesTags: ['Assignments'],
         }),
 
+        getAssignmentById: builder.query<Assignment, string>({
+            query: (id) => `asset-assignments/${id}`,
+        }),
+
+        updateAssignment: builder.mutation<
+            Assignment,
+            { id: number; assignment: Partial<Assignment> }
+        >({
+            query: ({ id, assignment }) => ({
+                url: `asset-assignments/${id}`,
+                method: 'PUT',
+                body: assignment,
+            }),
+            invalidatesTags: ['Assignments'],
+        }),
+
         createAssignments: builder.mutation<Assignment, Partial<Assignment>>({
             query: (assignments) => ({
                 url: 'asset-assignments',
@@ -25,5 +41,9 @@ export const assignmentsApi = createApi({
     }),
 });
 
-export const { useGetAllAssignmentQuery, useCreateAssignmentsMutation } =
-    assignmentsApi;
+export const {
+    useGetAllAssignmentQuery,
+    useGetAssignmentByIdQuery,
+    useUpdateAssignmentMutation,
+    useCreateAssignmentsMutation,
+} = assignmentsApi;

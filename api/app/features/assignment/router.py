@@ -27,6 +27,15 @@ router = APIRouter(prefix="/api/v1")
 async def get_asset_assignments() -> list[AssetAssignment]:
     return asset_assignment_controller.index()
 
+@router.get(
+    "/asset-assignments/{asset_assignment_id}",
+    response_model=AssetAssignment
+)
+async def get_asset_assignment(
+    asset_assignment_id: int, 
+) -> AssetAssignment:
+    return asset_assignment_controller.show(asset_assignment_id)
+
 @router.post(
     "/asset-assignments",
     response_model=AssetAssignment, 

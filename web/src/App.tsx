@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
-import { store } from './app/store';
+import { store } from './store/store';
 
 import AssetListPage from './pages/asset/AssetListPage';
 import AssetDetailPage from './pages/asset/AssetDetailPage';
@@ -9,6 +9,7 @@ import AssetCreatePage from './pages/asset/AssetCreatePage';
 import Navbar from './components/Navbar';
 import AssignmentListPage from './pages/assignment/AssignmentListPage';
 import AssignmentCreatePage from './pages/assignment/AssignmentCreatePage';
+import AssignmentEditPage from './pages/assignment/AssignmentEditPage';
 
 export default function App() {
     return (
@@ -27,6 +28,10 @@ export default function App() {
                     <Route
                         path="/assignments"
                         element={<AssignmentListPage />}
+                    />
+                    <Route
+                        path="/assignments/:id/edit"
+                        element={<AssignmentEditPage />}
                     />
                     <Route
                         path="/assignments/:id/new"
