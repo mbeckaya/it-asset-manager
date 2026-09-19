@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import type { Asset } from '../types/asset';
+import type { Status } from '../types/status';
 
 export const assetsApi = createApi({
     reducerPath: 'assetsApi',
@@ -16,6 +17,10 @@ export const assetsApi = createApi({
 
         getAssetById: builder.query<Asset, string>({
             query: (id) => `assets/${id}`,
+        }),
+
+        getAssetStatusById: builder.query<Status[], string>({
+            query: (id) => `assets/${id}/status`,
         }),
 
         updateAsset: builder.mutation<
@@ -52,6 +57,7 @@ export const assetsApi = createApi({
 export const {
     useGetAllAssetsQuery,
     useGetAssetByIdQuery,
+    useGetAssetStatusByIdQuery,
     useCreateAssetMutation,
     useUpdateAssetMutation,
     useDestroyByIdMutation,

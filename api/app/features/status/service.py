@@ -12,17 +12,3 @@ class AssetStatusService(BaseService):
                 .where(AssetStatus.asset_id == asset_id)
                 .order_by(AssetStatus.created_at.desc())
             ).all()
-
-    def create(self, asset_status: AssetStatusCreate) -> AssetStatus:
-        asset_status_new = AssetStatus.model_validate(asset_status)
-                
-        with Session(engine) as session:
-            try:
-                session.add(asset_status_new)
-                session.commit()
-                session.refresh(asset_status_new)
-            except Exception:
-                session.rollback()
-                raise
-
-        return asset_status_new

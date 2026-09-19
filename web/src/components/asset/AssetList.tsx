@@ -13,7 +13,7 @@ import {
 
 import LoadingSpinner from '../LoadingSpinner';
 import ErrorMessage from '../ErrorMessage';
-import AssetStatus from './AssetStatus';
+import AssetStatusBadge from './AssetStatusBadge';
 
 export default function AssetList() {
     const {
@@ -68,9 +68,9 @@ export default function AssetList() {
                             <td>{asset.type}</td>
                             <td>{asset.model}</td>
                             <td>
-                                <AssetStatus asset={asset}>
+                                <AssetStatusBadge status={asset.status}>
                                     {asset.status}
-                                </AssetStatus>
+                                </AssetStatusBadge>
                             </td>
                             <td className="flex gap-2">
                                 <Link

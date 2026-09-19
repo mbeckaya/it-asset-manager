@@ -1,14 +1,12 @@
-import type { Asset } from '../types/asset';
-
 type Props = {
-    asset: Asset;
+    status: string;
     children: React.ReactNode;
 };
 
-export default function AssetStatus({ asset, children }: Props) {
+export default function AssetStatusBadge({ status, children }: Props) {
     let badgeClass = '';
 
-    switch (asset.status) {
+    switch (status) {
         case 'available':
             badgeClass = 'badge-success';
             break;

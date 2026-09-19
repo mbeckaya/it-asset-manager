@@ -2,7 +2,7 @@ import { useGetAssetByIdQuery } from '../../api/assetsApi';
 
 import ErrorMessage from '../ErrorMessage';
 import LoadingSpinner from '../LoadingSpinner';
-import AssetStatus from './AssetStatus';
+import AssetStatusBadge from './AssetStatusBadge';
 
 type Props = {
     id: string;
@@ -34,7 +34,7 @@ export default function AssetDetail({ id }: Props) {
     }
 
     return (
-        <div className="card bg-base-100 w-full max-w-4xl shadow-xl">
+        <div className="card bg-base-100 w-full max-w-4xl shadow-xl mb-4">
             <div className="card-body gap-6">
                 <div className="flex flex-wrap justify-between items-center gap-2">
                     <div>
@@ -44,9 +44,9 @@ export default function AssetDetail({ id }: Props) {
                         <h1 className="text-3xl font-bold">{asset.model}</h1>
                     </div>
 
-                    <AssetStatus asset={asset}>
-                        {asset.status.toUpperCase()}
-                    </AssetStatus>
+                    <AssetStatusBadge status={asset.status}>
+                        {asset.status}
+                    </AssetStatusBadge>
                 </div>
 
                 <div className="stats stats-vertical lg:stats-horizontal shadow bg-base-200 w-full">
