@@ -5,7 +5,7 @@ import { getApiErrorMessage } from '../../api/apiError';
 import type { Assignment } from '../../types/assignment';
 
 import AssignmentForm from './AssignmentForm';
-import ErrorMessage from '../ErrorMessage';
+import AlertMessage from '../AlertMessage';
 
 type Props = {
     id: string;
@@ -40,7 +40,7 @@ export default function AssignmentCreate({ id }: Props) {
     };
 
     if (createError) {
-        return <ErrorMessage>{createError}</ErrorMessage>;
+        return <AlertMessage type="error">{createError}</AlertMessage>;
     }
 
     return (

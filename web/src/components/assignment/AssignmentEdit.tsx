@@ -8,7 +8,7 @@ import { getApiErrorMessage } from '../../api/apiError';
 import type { Assignment } from '../../types/assignment';
 
 import LoadingSpinner from '../LoadingSpinner';
-import ErrorMessage from '../ErrorMessage';
+import AlertMessage from '../AlertMessage';
 import AssignmentForm from './AssignmentForm';
 
 type Props = {
@@ -50,10 +50,10 @@ export default function AssignmentEdit({ id }: Props) {
 
     if (error || updateError) {
         return (
-            <ErrorMessage>
+            <AlertMessage type="error">
                 {error && <>Loading Assignment</>}
                 {updateError && <>{updateError}</>}
-            </ErrorMessage>
+            </AlertMessage>
         );
     }
 

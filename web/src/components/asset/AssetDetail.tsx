@@ -1,6 +1,6 @@
 import { useGetAssetByIdQuery } from '../../api/assetsApi';
 
-import ErrorMessage from '../ErrorMessage';
+import AlertMessage from '../AlertMessage';
 import LoadingSpinner from '../LoadingSpinner';
 import AssetStatusBadge from './AssetStatusBadge';
 
@@ -23,9 +23,9 @@ export default function AssetDetail({ id }: Props) {
 
     if (error) {
         return (
-            <ErrorMessage>
+            <AlertMessage type="error">
                 <span>Loading Asset</span>
-            </ErrorMessage>
+            </AlertMessage>
         );
     }
 

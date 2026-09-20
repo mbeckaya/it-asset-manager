@@ -12,7 +12,7 @@ import {
 } from '../../api/assetsApi';
 
 import LoadingSpinner from '../LoadingSpinner';
-import ErrorMessage from '../ErrorMessage';
+import AlertMessage from '../AlertMessage';
 import AssetStatusBadge from './AssetStatusBadge';
 
 export default function AssetList() {
@@ -39,9 +39,9 @@ export default function AssetList() {
 
     if (error) {
         return (
-            <ErrorMessage>
+            <AlertMessage type="error">
                 <span>Loading Assets</span>
-            </ErrorMessage>
+            </AlertMessage>
         );
     }
 

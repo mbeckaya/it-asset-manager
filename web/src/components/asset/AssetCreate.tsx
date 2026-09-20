@@ -8,7 +8,7 @@ import { AssetStatusEnum } from '../../types/enums/assetStatusEnum';
 import { getApiErrorMessage } from '../../api/apiError';
 import type { Asset } from '../../types/asset';
 
-import ErrorMessage from '../ErrorMessage';
+import AlertMessage from '../AlertMessage';
 import AssetForm from './AssetForm';
 
 export default function AssetCreate() {
@@ -41,7 +41,7 @@ export default function AssetCreate() {
     };
 
     if (createError) {
-        return <ErrorMessage>{createError}</ErrorMessage>;
+        return <AlertMessage type='error'>{createError}</AlertMessage>;
     }
 
     return <AssetForm data={asset} onSubmitSuccess={onSubmitSuccess} />;

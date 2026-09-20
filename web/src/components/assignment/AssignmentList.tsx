@@ -3,7 +3,7 @@ import { PencilIcon } from '@heroicons/react/24/outline';
 
 import { useGetAllAssignmentQuery } from '../../api/assignmentsApi';
 
-import ErrorMessage from '../ErrorMessage';
+import AlertMessage from '../AlertMessage';
 import LoadingSpinner from '../LoadingSpinner';
 
 export default function AssignmentList() {
@@ -19,9 +19,9 @@ export default function AssignmentList() {
 
     if (error) {
         return (
-            <ErrorMessage>
+            <AlertMessage type="error">
                 <span>Loading Assignments</span>
-            </ErrorMessage>
+            </AlertMessage>
         );
     }
 

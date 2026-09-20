@@ -8,7 +8,7 @@ import { AssetResellerEnum } from '../../types/enums/assetResellerEnum';
 import { AssetStatusEnum } from '../../types/enums/assetStatusEnum';
 import type { Asset, AssetFormErrors } from '../../types/asset';
 
-import ErrorMessage from '../ErrorMessage';
+import AlertMessage from '../AlertMessage';
 
 type Props = {
     data: Asset;
@@ -77,9 +77,9 @@ export default function AssetForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.brand && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.brand}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -99,9 +99,9 @@ export default function AssetForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.type && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.type}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -121,9 +121,9 @@ export default function AssetForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.reseller && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.reseller}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -144,9 +144,9 @@ export default function AssetForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.purchased_at && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.purchased_at}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -166,9 +166,9 @@ export default function AssetForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.model && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.model}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -188,9 +188,9 @@ export default function AssetForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.serial && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.serial}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -211,9 +211,9 @@ export default function AssetForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.warranty_months && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.warranty_months}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -234,9 +234,9 @@ export default function AssetForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.price && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.price}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -256,9 +256,9 @@ export default function AssetForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.status && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.status}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>

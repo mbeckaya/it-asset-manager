@@ -4,7 +4,7 @@ import type { Assignment, AssignmentFormErrors } from '../../types/assignment';
 
 import { EnumSelect } from '../EnumSelect';
 import { UserEnum } from '../../types/enums/userEnum';
-import ErrorMessage from '../ErrorMessage';
+import AlertMessage from '../AlertMessage';
 
 type Props = {
     data: Assignment;
@@ -75,9 +75,9 @@ export default function AssignmentForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.asset_id && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.asset_id}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -98,9 +98,9 @@ export default function AssignmentForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.user_id && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.user_id}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -121,9 +121,9 @@ export default function AssignmentForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.assigned_at && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.assigned_at}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -144,9 +144,9 @@ export default function AssignmentForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.returned_at && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.returned_at}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>
@@ -167,9 +167,9 @@ export default function AssignmentForm({ data, onSubmitSuccess }: Props) {
 
                 {formErrors?.notes && (
                     <div className="pt-1">
-                        <ErrorMessage>
+                        <AlertMessage type="error">
                             <p>{formErrors.notes}</p>
-                        </ErrorMessage>
+                        </AlertMessage>
                     </div>
                 )}
             </div>

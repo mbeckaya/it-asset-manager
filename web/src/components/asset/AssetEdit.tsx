@@ -8,7 +8,7 @@ import { getApiErrorMessage } from '../../api/apiError';
 import type { Asset } from '../../types/asset';
 
 import LoadingSpinner from '../LoadingSpinner';
-import ErrorMessage from '../ErrorMessage';
+import AlertMessage from '../AlertMessage';
 import AssetForm from './AssetForm';
 
 type Props = {
@@ -41,10 +41,10 @@ export default function AssetEdit({ id }: Props) {
 
     if (error || updateError) {
         return (
-            <ErrorMessage>
+            <AlertMessage type="error">
                 {error && <>Loading Asset</>}
                 {updateError && <>{updateError}</>}
-            </ErrorMessage>
+            </AlertMessage>
         );
     }
 
