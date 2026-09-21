@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
 
 import {
     useGetAssignmentByIdQuery,
@@ -6,6 +8,7 @@ import {
 } from '../../api/assignmentsApi';
 import { getApiErrorMessage } from '../../api/apiError';
 import type { Assignment } from '../../types/assignment';
+import { setAlert } from '../../store/alertSlice';
 
 import LoadingSpinner from '../LoadingSpinner';
 import AlertMessage from '../AlertMessage';
@@ -25,6 +28,8 @@ export default function AssignmentEdit({ id }: Props) {
     });
     const [updateError, setUpdateError] = useState<string | null>(null);
     const [updateAssignment] = useUpdateAssignmentMutation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const onSubmitSuccess = async (assignment: Assignment) => {
         try {
@@ -38,10 +43,19 @@ export default function AssignmentEdit({ id }: Props) {
             setUpdateError(
                 getApiErrorMessage(
                     error,
-                    'The assignment could not be created.',
+                    'The assignment could not be updated.',
                 ),
             );
         }
+
+        navigate('/assignments');
+
+        dispatch(
+            setAlert({
+                type: 'success',
+                message: 'The assignment was successful updated.',
+            }),
+        );
     };
 
     if (isLoading) {

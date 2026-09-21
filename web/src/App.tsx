@@ -1,6 +1,7 @@
-import { Provider } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
-import { store } from './store/store';
+
+import type { RootState } from './store/store';
 
 import AssetListPage from './pages/asset/AssetListPage';
 import AssetDetailPage from './pages/asset/AssetDetailPage';
@@ -10,36 +11,33 @@ import Navbar from './components/Navbar';
 import AssignmentListPage from './pages/assignment/AssignmentListPage';
 import AssignmentCreatePage from './pages/assignment/AssignmentCreatePage';
 import AssignmentEditPage from './pages/assignment/AssignmentEditPage';
+import AlertMessage from './components/AlertMessage';
 
 export default function App() {
-    return (
-        <Provider store={store}>
-            <BrowserRouter>
-                <Navbar />
+    const alert = useSelector((state: RootState) => state.alert);
 
-                <Routes>
-                    <Route path="/" element={<AssetListPage />} />
-                    <Route path="/assets/:id" element={<AssetDetailPage />} />
-                    <Route
-                        path="/assets/:id/edit"
-                        element={<AssetEditPage />}
-                    />
-                    <Route path="/assets/new" element={<AssetCreatePage />} />
-                    <Route
-                        path="/assignments"
-                        element={<AssignmentListPage />}
-                    />
-                    <Route
-                        path="/assignments/:id/edit"
-                        element={<AssignmentEditPage />}
-                    />
-                    <Route
-                        path="/assignments/:id/new"
-                        element={<AssignmentCreatePage />}
-                    />
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                </Routes>
-            </BrowserRouter>
-        </Provider>
+    return (
+        <BrowserRouter>
+            <Navbar />
+
+            <AlertMessage type={alert.type}>{alert.message}</AlertMessage>
+
+            <Routes>
+                <Route path="/" element={<AssetListPage />} />
+                <Route path="/assets/:id" element={<AssetDetailPage />} />
+                <Route path="/assets/:id/edit" element={<AssetEditPage />} />
+                <Route path="/assets/new" element={<AssetCreatePage />} />
+                <Route path="/assignments" element={<AssignmentListPage />} />
+                <Route
+                    path="/assignments/:id/edit"
+                    element={<AssignmentEditPage />}
+                />
+                <Route
+                    path="/assignments/:id/new"
+                    element={<AssignmentCreatePage />}
+                />
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+        </BrowserRouter>
     );
 }

@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
 
 import { useCreateAssignmentsMutation } from '../../api/assignmentsApi';
 import { getApiErrorMessage } from '../../api/apiError';
 import type { Assignment } from '../../types/assignment';
+import { setAlert } from '../../store/alertSlice';
 
 import AssignmentForm from './AssignmentForm';
 import AlertMessage from '../AlertMessage';
@@ -14,6 +17,8 @@ type Props = {
 export default function AssignmentCreate({ id }: Props) {
     const [createError, setCreatError] = useState<string | null>(null);
     const [createAssignments] = useCreateAssignmentsMutation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const assignment: Assignment = {
         id: -1,
@@ -37,6 +42,15 @@ export default function AssignmentCreate({ id }: Props) {
                 ),
             );
         }
+
+        navigate('/assignments');
+
+        dispatch(
+            setAlert({
+                type: 'success',
+                message: 'The assignment was successful created.',
+            }),
+        );
     };
 
     if (createError) {

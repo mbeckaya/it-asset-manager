@@ -34,11 +34,11 @@ Full-stack IT Asset Manager built with **React, TypeScript, FastAPI & PostgreSQL
 
 ### Web
 
-- [ ] React frontend implementation
+- [x] React frontend implementation
 - [x] Asset CRUD interface
 - [x] Asset assignment interface
 - [x] Asset lifecycle status interface
-- [ ] User feedback (success/error states)
+- [x] User feedback (success/error states)
 
 ### Importer
 
@@ -62,7 +62,9 @@ asset-manager/
 
 ## 🚧 Status
 
-**In Progress**
+* **API** — `FastAPI` → ✅ **Done**
+* **Web** — `React` → ✅ **Done**
+* **Importer** — `Python` → 🚧 **In Progress**
 
 <!-- ```sh
 python -m venv venv
