@@ -9,15 +9,20 @@ Full-stack IT Asset Manager built with **React, TypeScript, FastAPI & PostgreSQL
 - 🐍 **Python + FastAPI** — REST API
 - 🗄️ **PostgreSQL** — Relational database
 
+### Importer
+
+- 🐍 **Python** — Data importing and processing
+
+### Testing
+
+- 🧪 **pytest** — API & importer testing
+- 🌐 **HTTPX** — HTTP/API testing
+
 ### Frontend
 
 - ⚛️ **React + TypeScript**
 - 🧰 **Redux Toolkit + RTK Query**
 - 🎨 **Tailwind CSS + daisyUI**
-
-### Importer
-
-- 🐍 **Python** — Data importing and processing
 
 ### Infrastructure
 
@@ -74,4 +79,6 @@ python -m venv venv
 pip install -r requirements.txt
 
 python -m fastapi dev app/main.py
+
+python -m pytest -s
 ``` -->

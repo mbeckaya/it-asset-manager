@@ -2,3 +2,5 @@ fastapi[standard]
 sqlmodel
 psycopg[binary]
 python-dotenv
+pytest
+httpx
