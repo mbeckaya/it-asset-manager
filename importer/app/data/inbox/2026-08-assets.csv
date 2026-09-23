@@ -1,0 +1,11 @@
+reseller,model,warranty_months,status,purchased_at,brand,type,serial,price
+Apple Store,Tab P12,24,available,2024-04-2,Lenovo,Tablet,LEN007890,429.0
+MediaMarkt,Latitude 7440,36,available,2023-09-10,Dell,Laptop,DL123456789,1599.0
+Apple Store,Galaxy S24,24,available,2024-02-15,Samsung,Smartphone,SAM983421,899.0
+MediaMarkt,ThinkPad E14,24,available,2023-11-21,Lenovo,Laptop,LEN456721,849.0
+Apple Store,iPhone 15,24,available,2024-01-08,Apple,Smartphone,APL784512,999.0
+MediaMarkt,Surface Laptop 5,24,available,2023-07-19,Microsoft,Laptop,MSF321987,1299.0
+Apple Store,IdeaPad 5,24,available,2024-03-12,Lenovo,Laptop,LEN654321,749.0
+MediaMarkt,iPad Air,24,available,2023-12-03,Apple,Tablet,APL147258,699.0
+Apple Store,EliteBook 840,36,available,2023-08-27,HP,Laptop,HP963852741,1199.0
+MediaMarkt,Xperia 1 V,24,available,2024-02-02,Sony,Smartphone,SNY741369,1099.0

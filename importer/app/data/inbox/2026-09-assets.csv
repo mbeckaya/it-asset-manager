@@ -1,0 +1,11 @@
+reseller,model,warranty_months,status,purchased_at,brand,type,serial,price
+Apple Store,Galaxy Tab S9,24,available,2023-10-14,Samsung,Tablet,SAM852963,799.0
+MediaMarkt,MacBook Air M2,24,available,2024-01-25,Apple,Laptop,APL369258,1249.0
+Apple Store,Inspiron 15,24,available,2023-06-18,Dell,Laptop,DL258147369,679.0
+MediaMarkt,ZenBook 14,24,available,2024-03-30,Asus,Laptop,ASU753159,999.0
+Apple Store,Pixel 8,24,available,2023-11-05,Google,Smartphone,GOO951357,799.0
+MediaMarkt,Surface Pro 9,24,available,2024-02-20,Microsoft,Tablet,MSF456789,1099.0
+Apple Store,Redmi Note 13,24,available,2024-04-11,Xiaomi,Smartphone,XIA852741,349.0
+MediaMarkt,MacBook Pro 14,24,available,2023-09-22,Apple,Laptop,APL963741,1999.0
+Apple Store,ProBook 450,36,available,2023-05-16,HP,Laptop,HP159753468,899.0
+MediaMarkt,Galaxy S23 FE,24,available,2024-01-14,Samsung,Smartphone,SAM357159,599.0
