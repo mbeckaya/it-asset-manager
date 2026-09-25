@@ -1,7 +1,7 @@
 import httpx
 from fastapi import status
 
-from ...features.asset.model import Asset
+from app.features.asset.model import Asset
 
 BASE_URL = "http://127.0.0.1:8000/api/v1"
 
