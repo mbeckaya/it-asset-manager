@@ -1,16 +1,20 @@
-from app.schema import schema
+from app.models.schema import schema
 from app.csv_reader import CsvReader
 from app.parser import Parser
-
-reader = CsvReader()
-parser = Parser(schema)
+from app.validator import Validator
 
 file_paths = (
     "./data/inbox/2026-08-assets.csv",
     "./data/inbox/2026-09-assets.csv",
 )
+headers = [definition.field for definition in schema]
+
+reader = CsvReader(headers)
+parser = Parser(schema)
+validator = Validator(schema)
 
 for file_path in file_paths:
     items = reader.read_file(file_path)
     parsed_items = parser.parse_items(items)
-    print(parsed_items)
+    valid_items = validator.validate_items(parsed_items)
+    print(valid_items)

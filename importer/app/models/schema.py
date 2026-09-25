@@ -1,0 +1,49 @@
+from app.models.field_definition import FieldDefinition
+
+schema = (
+    FieldDefinition(
+        field="reseller",
+        type=str,
+        required=True,
+    ),
+    FieldDefinition(
+        field="model",
+        type=str,
+        required=True,
+    ),
+    FieldDefinition(
+        field="warranty_months",
+        type=int,
+        required=True,
+    ),
+    FieldDefinition(
+        field="status",
+        type=str,
+        required=True,
+    ),
+    FieldDefinition(
+        field="purchased_at",
+        type=str,
+        required=True,
+    ),
+    FieldDefinition(
+        field="brand",
+        type=str,
+        required=True,
+    ),
+    FieldDefinition(
+        field="type",
+        type=str,
+        required=True,
+    ),
+    FieldDefinition(
+        field="serial",
+        type=str,
+        required=True,
+    ),
+    FieldDefinition(
+        field="price",
+        type=float,
+        required=True,
+    ),
+)
