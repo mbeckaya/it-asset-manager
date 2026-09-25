@@ -47,10 +47,10 @@ Full-stack IT Asset Manager built with **React, TypeScript, FastAPI & PostgreSQL
 
 ### Importer
 
-- [ ] Python importer
-- [ ] CSV parsing & validation
-- [ ] API request integration
-- [ ] Import error handling & reporting
+- [x] Python importer
+- [x] CSV parsing & validation
+- [x] API request integration
+- [x] Import error handling & logging
 
 ### Infrastructure
 
@@ -69,16 +69,5 @@ asset-manager/
 
 * **API** — `FastAPI` → ✅ **Done**
 * **Web** — `React` → ✅ **Done**
-* **Importer** — `Python` → 🚧 **In Progress**
-
-<!-- ```sh
-python -m venv venv
-
-.\venv\Scripts\Activate.ps1
-
-pip install -r requirements.txt
-
-python -m fastapi dev app/main.py
-
-python -m pytest -s
-``` -->
+* **Importer** — `Python` → ✅ **Done**
+* **Docker** — Containerized setup → 🚧 **In Progress**
