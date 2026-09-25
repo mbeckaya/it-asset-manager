@@ -1,12 +1,6 @@
 import logging
 from app.models.field_definition import FieldDefinition
 
-logging.basicConfig(
-    filename="./logs/validation.log",
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(name)s | line=%(lineno)d | %(message)s",
-)
-
 logger = logging.getLogger(__name__)
 
 class Validator:
